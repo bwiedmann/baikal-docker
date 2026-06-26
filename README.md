@@ -83,6 +83,20 @@ The image exposes the `/var/www/baikal/Specific` and `/var/www/baikal/config` fo
 
 If you want to use local folders instead of Docker volumes, see [examples/docker-compose.localvolumes.yaml](https://github.com/bwiedmann/baikal-docker/blob/master/examples/docker-compose.localvolumes.yaml) to avoid file permission issues.
 
+### macOS Calendar & Contacts (CalDAV/CardDAV) Setup
+
+When adding a Baikal account in macOS **Calendar** or **Contacts** (Internet Accounts), use the following URL format for the **Server Address**:
+
+```text
+https://yourdomain.tls/dav.php/principals/username/
+```
+
+> **Note:** The Baikal Web Admin UI may suggest shorter URLs like `/dav/principals/username/` or `/cal.php/principals/username/`. macOS requires the full path including `dav.php/principals/username/` **twice** during the setup dialog.  
+> 1. Enter `https://yourdomain.tls/dav.php/principals/username/` as the server address.  
+> 2. After clicking **Sign In**, macOS will ask again for the server path — enter `/dav.php/principals/username/` a second time.
+
+This is a known macOS quirk with sabre/dav based servers.
+
 ### Further Guides
 
 You can find more installation and configuration guides here:
