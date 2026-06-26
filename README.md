@@ -85,17 +85,26 @@ If you want to use local folders instead of Docker volumes, see [examples/docker
 
 ### macOS Calendar & Contacts (CalDAV/CardDAV) Setup
 
-When adding a Baikal account in macOS **Calendar** or **Contacts** (Internet Accounts), use the following URL format for the **Server Address**:
+When adding a Baikal account in macOS **Calendar** or **Contacts** (Internet Accounts), the Web Admin UI suggests URLs like:
 
+- Calendar (CalDAV): `/dav.php/calendars/username/default`
+- Contacts (CardDAV): `/dav.php/addressbooks/username/default/`
+
+However, macOS requires the full path with `dav.php/principals/username/` format. Use these URLs in the setup dialog:
+
+**For Calendar (CalDAV):**
 ```text
-https://yourdomain.tls/dav.php/principals/username/
+https://yourdomain.tld/dav.php/principals/username/
 ```
 
-> **Note:** The Baikal Web Admin UI may suggest shorter URLs like `/dav/principals/username/` or `/cal.php/principals/username/`. macOS requires the full path including `dav.php/principals/username/` **twice** during the setup dialog.  
-> 1. Enter `https://yourdomain.tls/dav.php/principals/username/` as the server address.  
-> 2. After clicking **Sign In**, macOS will ask again for the server path — enter `/dav.php/principals/username/` a second time.
+**For Contacts (CardDAV):**
+```text
+https://yourdomain.tld/dav.php/principals/username/
+```
 
-This is a known macOS quirk with sabre/dav based servers.
+> **Important:** After entering the server address, macOS will prompt you for the path again. Enter `/dav.php/principals/username/` a second time in that dialog. This is a known sabre/dav quirk with macOS.
+
+If you use the Baikal Web Admin's suggested URLs directly (e.g., `/dav.php/calendars/username/default` or `/dav.php/addressbooks/username/default/`), the setup will fail.
 
 ### Further Guides
 
