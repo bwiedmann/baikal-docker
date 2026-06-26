@@ -124,3 +124,27 @@ This image has the latest code from the source repository [bwiedmann/baikal-dock
 This image relies on [nginx](https://www.nginx.com/) and uses the [official nginx image](https://hub.docker.com/_/nginx/).
 
 Compared to the Apache variant, it is significantly smaller (less than half the size) and produces no warning messages out-of-the-box.
+
+## Switching Between Apache and Nginx Variants
+
+When switching from the Apache image to the Nginx image (or vice versa), be aware of file ownership differences:
+
+- **Apache images** run as user `www-data` (Debian default)
+- **Nginx images** run as user `nginx`
+
+### Permission Fix
+
+If you encounter "DB file is not writable" errors after switching images, the database directory needs proper ownership. Add the environment variable `BAIKAL_ENABLE_CHOWN=true` to your container to automatically fix permissions on startup:
+
+```bash
+docker run --rm -it -p 80:80 -e BAIKAL_ENABLE_CHOWN=true bwiedmann/baikal:nginx
+```
+
+Or in your `docker-compose.yml`:
+
+```yaml
+environment:
+  BAIKAL_ENABLE_CHOWN: "true"
+```
+
+This enables the entrypoint scripts to run `chown -R nginx:nginx /var/www/baikal` (nginx) or `chown -R www-data:www-data /var/www/baikal` (apache).
