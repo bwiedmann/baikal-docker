@@ -1,6 +1,6 @@
 # Email Guide
 
-This guide outlines the email configuration so that you can send out email invitations. Many thanks to [@philippneugebauer](https://github.com/philippneugebauer), [@vaskozl](https://github.com/vaskozl), [ahgraber](https://github.com/ahgraber), and everyone in [#61](https://github.com/ckulka/baikal-docker/discussions/61) for contributing.
+This guide outlines the email configuration so that you can send out email invitations. Many thanks to [@philippneugebauer](https://github.com/philippneugebauer), [@vaskozl](https://github.com/vaskozl), [ahgraber](https://github.com/ahgraber), and everyone in [#61](https://github.com/bwiedmann/baikal-docker/discussions/61) for contributing.
 
 In order to send out emails, you need a working SMTP service - you can host your own or rely on a service such as [Gmail](https://support.google.com/mail/answer/7126229?hl=en#zippy=%2Cstep-change-smtp-other-settings-in-your-email-client).
 
@@ -32,7 +32,7 @@ If you have an SMTP server without security in place, i.e. no authentication or 
 # docker-compose.yaml
 services:
   baikal:
-    image: ckulka/baikal:nginx
+    image: bwiedmann/baikal:nginx
     environment:
       MSMTPRC: |
         defaults
@@ -47,7 +47,7 @@ If you have TLS and authentication in place, add the following configuration par
 # docker-compose.yaml
 services:
   baikal:
-    image: ckulka/baikal:nginx
+    image: bwiedmann/baikal:nginx
     restart: always
     environment:
       MSMTPRC: |
@@ -85,7 +85,7 @@ Once that is done, use the following configuration:
 # docker-compose.yaml
 services:
   baikal:
-    image: ckulka/baikal:nginx
+    image: bwiedmann/baikal:nginx
     environment:
       MSMTPRC: |
         defaults
@@ -110,4 +110,4 @@ When using DAVx5, then your Baikal usernames must be email addresses, otherwise 
 
 For more details, see <https://manual.davx5.com/accounts_collections.html#account-names>.
 
-Kodus to @deathblade666 for finding this out in <https://github.com/ckulka/baikal-docker/issues/290#issuecomment-3136438356>.
+Kodus to @deathblade666 for finding this out in <https://github.com/bwiedmann/baikal-docker/issues/290#issuecomment-3136438356>.

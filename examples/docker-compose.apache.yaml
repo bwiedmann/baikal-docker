@@ -1,6 +1,6 @@
 services:
   baikal:
-    image: ckulka/baikal:apache
+    image: bwiedmann/baikal:apache
     restart: always
     environment:
       BAIKAL_SERVERNAME: dav.example.io

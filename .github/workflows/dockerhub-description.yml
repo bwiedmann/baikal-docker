@@ -23,5 +23,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: ckulka/baikal
+          repository: bwiedmann/baikal
           short-description: ${{ github.event.repository.description }}

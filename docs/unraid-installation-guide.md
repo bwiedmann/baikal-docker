@@ -11,7 +11,7 @@ This Unraid Docker Installation guide assumes a few things:
 1. Enabled ability to utilize Docker Hub for search results (see settings within the apps tab)
 1. (Optional) A reverse proxy container and network to allow for certificate handling & SSL connections
 
-**Installation Note** – You can change the Docker image tag in the repository in the later steps to one that is suitable for your setup. See [ckulka/baikal (Docker Hub)](https://hub.docker.com/r/ckulka/baikal/tags?page=1&ordering=last_updated) or [ckulka/baikal-docker (Github)](https://github.com/ckulka/baikal-docker) for a list of all available Docker image tags.
+**Installation Note** – You can change the Docker image tag in the repository in the later steps to one that is suitable for your setup. See [bwiedmann/baikal (Docker Hub)](https://hub.docker.com/r/bwiedmann/baikal/tags?page=1&ordering=last_updated) or [bwiedmann/baikal-docker (Github)](https://github.com/bwiedmann/baikal-docker) for a list of all available Docker image tags.
 
 **Further Installation Note** – If you utilise an external database such as [MariaDB](https://hub.docker.com/_/mariadb), please ensure that Baikal and the database can connect correctly:
 
@@ -24,13 +24,13 @@ With that in mind, the installation of Baikal is rather simple once you have the
 
 1. Head over to apps and search for "Baikal".
 
-1. Click on the _ckulka/baikal_ repository within the search results to begin the installation of Baikal.
+1. Click on the _bwiedmann/baikal_ repository within the search results to begin the installation of Baikal.
 
 1. On the right in the template, switch from _Basic View_ to _Advanced View_.
 
 1. Ensure that the Docker image tag in your Docker repository line is the image variant you want.
 
-   For more details, see _Image Variants_ and the _Tags_ tab in [ckulka/baikal (Docker Hub)](https://hub.docker.com/r/ckulka/baikal).
+   For more details, see _Image Variants_ and the _Tags_ tab in [bwiedmann/baikal (Docker Hub)](https://hub.docker.com/r/bwiedmann/baikal).
 
 1. Set your _Icon URL_ to <https://raw.githubusercontent.com/sabre-io/sabre.io/master/source/img/baikal.png> (Baikal logo from the official maintainers).
 

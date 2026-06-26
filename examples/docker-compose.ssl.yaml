@@ -9,13 +9,13 @@
 
 services:
   baikal:
-    image: ckulka/baikal:nginx
+    image: bwiedmann/baikal:nginx
     restart: always
     labels:
       traefik.enable: true
       traefik.http.routers.baikal.rule: Host(`dav.example.com`)
       traefik.http.routers.baikal.tls: true
-      # Traefik middleware required for iOS, see https://github.com/ckulka/baikal-docker/issues/37.
+      # Traefik middleware required for iOS, see https://github.com/bwiedmann/baikal-docker/issues/37.
       traefik.http.routers.baikal.middlewares: baikal-dav
       traefik.http.middlewares.baikal-dav.redirectregex.regex: https://(.*)/.well-known/(card|cal)dav
       traefik.http.middlewares.baikal-dav.redirectregex.replacement: https://$$1/dav.php/

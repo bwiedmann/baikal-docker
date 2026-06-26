@@ -1,6 +1,6 @@
 # Home Assistant Fix
 
-This guide explains how to apply the Home Assistant fix that resolves <https://github.com/ckulka/baikal-docker/issues/231> and <https://github.com/sabre-io/dav/issues/1318>.
+This guide explains how to apply the Home Assistant fix that resolves <https://github.com/bwiedmann/baikal-docker/issues/231> and <https://github.com/sabre-io/dav/issues/1318>.
 
 In short, if you are using Home Assistant and see this issue, then follow this guide to fix it.
 
@@ -25,7 +25,7 @@ If you use a `docker-compose.yml` file, then it would look similar to this:
 ```yaml
 services:
   baikal:
-    image: ckulka/baikal:nginx
+    image: bwiedmann/baikal:nginx
     environment:
       APPLY_HOME_ASSISTANT_FIX: "true"
     # (...)

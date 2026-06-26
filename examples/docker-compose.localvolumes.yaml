@@ -13,7 +13,7 @@
 
 services:
   baikal:
-    image: ckulka/baikal:nginx
+    image: bwiedmann/baikal:nginx
     restart: always
     ports:
       - "80:80"

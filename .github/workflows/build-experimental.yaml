@@ -46,8 +46,8 @@ jobs:
       dockerfile: apache.dockerfile
       image-version: experimental
       tags: |
-        ckulka/baikal:experimental-apache
-        ckulka/baikal:experimental
+        bwiedmann/baikal:experimental-apache
+        bwiedmann/baikal:experimental
     secrets: inherit
 
   apache_php82:
@@ -58,8 +58,8 @@ jobs:
       dockerfile: apache-php8.2.dockerfile
       image-version: experimental
       tags: |
-        ckulka/baikal:experimental-apache-php8.2
-        ckulka/baikal:experimental-php8.2
+        bwiedmann/baikal:experimental-apache-php8.2
+        bwiedmann/baikal:experimental-php8.2
     secrets: inherit
 
   nginx:
@@ -69,7 +69,7 @@ jobs:
     with:
       dockerfile: nginx.dockerfile
       image-version: experimental
-      tags: ckulka/baikal:experimental-nginx
+      tags: bwiedmann/baikal:experimental-nginx
     secrets: inherit
 
   nginx_php82:
@@ -79,5 +79,5 @@ jobs:
     with:
       dockerfile: nginx-php8.2.dockerfile
       image-version: experimental
-      tags: ckulka/baikal:experimental-nginx-php8.2
+      tags: bwiedmann/baikal:experimental-nginx-php8.2
     secrets: inherit
