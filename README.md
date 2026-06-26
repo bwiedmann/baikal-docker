@@ -1,5 +1,7 @@
 # Baikal
 
+⚠️ **Forked to get updates faster!** ⚠️ 
+
 [![Latest images](https://github.com/bwiedmann/baikal-docker/actions/workflows/build-latest.yaml/badge.svg)](https://github.com/bwiedmann/baikal-docker/actions/workflows/build-latest.yaml) [![Experimental images](https://github.com/bwiedmann/baikal-docker/actions/workflows/build-experimental.yaml/badge.svg)](https://github.com/bwiedmann/baikal-docker/actions/workflows/build-experimental.yaml) ![Docker Pulls](https://img.shields.io/docker/pulls/bwiedmann/baikal) ![Docker Architectures](https://img.shields.io/badge/arch-amd64%20%7C%20arm32v7%20%7C%20arm64v8%20%7C%20i386-informational)
 
 This dockerfile provides a ready-to-go [Baikal server](http://sabre.io/baikal/).
